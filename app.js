@@ -1,30 +1,29 @@
-let listaDeAmigos = [];
-
-function exibirTextoNaTela () {
-    let campo = document.querySelector(tag);
-    campo.innerHTML = texto;
-}
-
-function exibirMensagemInicial() {
-    exibirTextoNaTela('h1', 'Lista de Amigo Secreto');
-    exibirTextoNaTela('p', 'Adicione um amigo para começar!');
-}
+let amigos = [];
 
 function adicionarAmigo() {
-    let nome = document.querySelector('input').value;
+    let inputAmigo = document.getElementById('amigo');
+    let nome = inputAmigo.value();
 
-    if (nome == '') {
-        exibirTextoNaTela('p', 'Digite um nome válido!');
-    } else {
-        listaDeAmigos.push(nome);
-        exibirTextoNaTela('p', `Amigo ${nome} adicionado!`);
-        limparCampo();
+    if (nome === '') {
+        alert('Por favor, insira um nome.');
+        return;
+    }
+
+    amigos.push(nome);
+
+    inputAmigo.value = ''; 
+}
+
+function atualizarLista() {
+    let listaAmigos = document.getElementById('listaAmigos');
+
+    listaAmigos.innerHTML = '';
+
+    for (let i = 0; i < amigos.length; i++) {
+        let li = document.createElement('li');
+        li.textContent = amigos[i];
+
+        listaAmigos.appendChild(li);
     }
 }
 
-function limparCampo() {
-    let campo = document.querySelector('input');
-    campo.value = '';
-}
-
-exibirMensagemInicial();
