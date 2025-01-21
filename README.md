@@ -1,6 +1,6 @@
 # Amigo Secreto
 
-Um simples aplicativo web para realizar sorteios de amigo secreto. Os usuários podem adicionar nomes de amigos e sortear um amigo secreto aleatoriamente.
+Um aplicativo web para realizar sorteios de amigo secreto. Os usuários podem adicionar nomes de amigos e sortear um amigo secreto aleatoriamente.
 
 ## Funcionalidades
 
